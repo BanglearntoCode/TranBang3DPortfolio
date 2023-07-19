@@ -1,0 +1,17 @@
+version: 1
+services:
+  - name: client
+    buildCommand: npm install
+    startCommand: npm run start
+    env:
+      - key: NODE_ENV
+        value: production
+    dir: client
+
+  - name: server
+    buildCommand: npm install
+    startCommand: nodemon index.js
+    env:
+      - key: NODE_ENV
+        value: production
+    dir: server
